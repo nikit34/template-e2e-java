@@ -39,4 +39,8 @@ public class WebDriverProvider {
 
         return new ChromeDriver(options);
     }
+
+    public static void tearDown() {
+        WebDriverRunner.closeWebDriver();
+    }
 }

@@ -1,5 +1,6 @@
 package pt.devexperts;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
@@ -14,5 +15,10 @@ public abstract class BaseTest {
     @BeforeEach
     public void setup() {
         WebDriverProvider.setup();
+    }
+
+    @AfterEach
+    public void tearDown() {
+        WebDriverProvider.tearDown();
     }
 }
