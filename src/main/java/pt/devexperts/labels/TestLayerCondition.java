@@ -1,15 +1,20 @@
 package pt.devexperts.labels;
 
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.extension.ConditionEvaluationResult;
 import org.junit.jupiter.api.extension.ExecutionCondition;
 import org.junit.jupiter.api.extension.ExtensionContext;
+import pt.devexperts.configs.TestScopeConfig;
 
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Optional;
 
+import static pt.devexperts.properties.ConfigPropertiesService.getProperties;
+
 
 public class TestLayerCondition implements ExecutionCondition {
+    private static final TestScopeConfig TEST_SCOPE_CONFIG = ConfigFactory.create(TestScopeConfig.class, getProperties());
 
     @Override
     public ConditionEvaluationResult evaluateExecutionCondition(ExtensionContext context) {
@@ -23,7 +28,7 @@ public class TestLayerCondition implements ExecutionCondition {
                 .filter(Objects::nonNull)
                 .findFirst()).orElse(null);
 
-        final String desiredLayers = System.getProperty("TEST_LAYERS");
+        final String desiredLayers = TEST_SCOPE_CONFIG.testLayers();
 
         if (desiredLayers != null) {
             if (matchesAny(desiredLayers, classLayer) || matchesAny(desiredLayers, methodLayer)) {
