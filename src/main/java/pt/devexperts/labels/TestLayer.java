@@ -16,7 +16,7 @@ public @interface TestLayer {
     String[] value();
 
     final class Type {
-        public static final String SMOCK = "smock";
+        public static final String SMOKE = "smoke";
         public static final String REGRESS = "regress";
 
         private Type() {}

@@ -15,7 +15,7 @@ import static pt.devexperts.pages.BasePage.mainPage;
 import static pt.devexperts.pages.BasePage.productPage;
 
 
-@TestLayer({TestLayer.Type.SMOCK, TestLayer.Type.REGRESS})
+@TestLayer({TestLayer.Type.SMOKE, TestLayer.Type.REGRESS})
 public class CartTests extends BaseTest {
     private static final ElementsConfig ELEMENTS_CONFIG = ConfigFactory.create(ElementsConfig.class, getProperties());
 
