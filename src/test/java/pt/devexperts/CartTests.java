@@ -33,7 +33,7 @@ public class CartTests extends BaseTest {
     }
 
     @Test
-    public void testGoogleSearch() {
+    public void testAddProductToCart() {
         open("/");
 
         mainPage.productPrice(PRODUCTS_CONFIG.title())
