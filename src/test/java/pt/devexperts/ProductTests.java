@@ -3,6 +3,7 @@ package pt.devexperts;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Test;
 import pt.devexperts.configs.testdata.ElementsConfig;
+import pt.devexperts.labels.TestLayer;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -16,6 +17,7 @@ public class ProductTests extends BaseTest {
     private static final ElementsConfig ELEMENTS_CONFIG = ConfigFactory.create(ElementsConfig.class, getProperties());
 
     @Test
+    @TestLayer(TestLayer.Type.REGRESS)
     public void testProductVisibleOnProductPage() {
         open("/");
 
