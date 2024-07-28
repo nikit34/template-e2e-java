@@ -1,15 +1,8 @@
 package pt.devexperts;
 
-import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.WebDriverRunner;
 import org.aeonbits.owner.ConfigFactory;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import pt.devexperts.pages.elements.CartRow;
 import pt.devexperts.testdata.ElementsConfig;
 import pt.devexperts.testdata.ProductsConfig;
 

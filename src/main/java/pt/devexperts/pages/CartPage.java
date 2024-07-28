@@ -2,7 +2,6 @@ package pt.devexperts.pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import pt.devexperts.SelenideBlock;
 import pt.devexperts.pages.elements.CartRow;
 
 import static com.codeborne.selenide.Selenide.$$x;
