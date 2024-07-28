@@ -4,9 +4,12 @@ import org.aeonbits.owner.Config;
 
 @Config.Sources("classpath:testdata/products.properties")
 public interface ProductsConfig extends Config {
-    @Key("product.title")
-    String productTitle();
+    @Key("title")
+    String title();
 
-    @Key("product.price")
-    String productPrice();
+    @Key("price")
+    String price();
+
+    @Key("price.currency")
+    String priceCurrency();
 }

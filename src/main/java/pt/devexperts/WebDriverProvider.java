@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import static org.openqa.selenium.chrome.ChromeOptions.LOGGING_PREFS;
 
 
-public class WebDriverProvider {
+public final class WebDriverProvider {
 
     public static void init() {
         Configuration.browserSize = "1920x1080";
