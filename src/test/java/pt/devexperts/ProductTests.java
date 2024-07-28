@@ -2,8 +2,7 @@ package pt.devexperts;
 
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Test;
-import pt.devexperts.testdata.ElementsConfig;
-import pt.devexperts.testdata.ProductsConfig;
+import pt.devexperts.configs.testdata.ElementsConfig;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -14,7 +13,6 @@ import static pt.devexperts.pages.BasePage.productPage;
 
 
 public class ProductTests extends BaseTest {
-    private static final ProductsConfig PRODUCTS_CONFIG = ConfigFactory.create(ProductsConfig.class, getProperties());
     private static final ElementsConfig ELEMENTS_CONFIG = ConfigFactory.create(ElementsConfig.class, getProperties());
 
     @Test

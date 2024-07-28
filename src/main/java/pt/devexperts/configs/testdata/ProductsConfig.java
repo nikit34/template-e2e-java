@@ -1,4 +1,4 @@
-package pt.devexperts.testdata;
+package pt.devexperts.configs.testdata;
 
 import org.aeonbits.owner.Config;
 

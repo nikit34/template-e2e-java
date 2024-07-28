@@ -2,23 +2,27 @@ package pt.devexperts;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
+import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.logging.LoggingPreferences;
+import pt.devexperts.configs.RouterConfig;
 
 import java.util.logging.Level;
 
 import static org.openqa.selenium.chrome.ChromeOptions.LOGGING_PREFS;
+import static pt.devexperts.properties.ConfigPropertiesService.getProperties;
 
 
 public final class WebDriverProvider {
+    private static final RouterConfig ROUTER_CONFIG = ConfigFactory.create(RouterConfig.class, getProperties());
 
     public static void init() {
         Configuration.browserSize = "1920x1080";
         Configuration.timeout = 15_000;
-        Configuration.baseUrl = "https://www.demoblaze.com";
+        Configuration.baseUrl = ROUTER_CONFIG.baseUrl();
         Configuration.savePageSource = false;
     }
 
