@@ -18,7 +18,8 @@ public class WebDriverProvider {
     public static void init() {
         Configuration.browserSize = "1920x1080";
         Configuration.timeout = 15_000;
-        Configuration.baseUrl = "https://www.google.com";
+        Configuration.baseUrl = "https://www.demoblaze.com";
+        Configuration.savePageSource = false;
     }
 
     public static void setup() {
