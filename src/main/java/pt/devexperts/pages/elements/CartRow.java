@@ -17,4 +17,8 @@ public class CartRow extends SelenideBlock {
     public SelenideElement price() {
         return this.$x("td[3]").as("Price in cart row");
     }
+
+    public SelenideElement removeBtn() {
+        return this.$x("td[4]/a").as("Button for delete product from cart");
+    }
 }

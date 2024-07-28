@@ -66,4 +66,30 @@ public class CartTests extends BaseTest {
                 .shouldBe(visible)
                 .shouldHave(text(PRODUCTS_CONFIG.price()));
     }
+
+    @Test
+    public void testRemoveProductFromCart() {
+        open("/");
+
+        mainPage.productTitle(PRODUCTS_CONFIG.title())
+                .shouldBe(visible)
+                .click();
+
+        productPage.addToCartBtn()
+                .shouldBe(visible)
+                .click();
+
+        ACTIONS.waitAndAcceptAlert();
+
+        open("/cart.html");
+
+        cartPage.getFirstTableRow().removeBtn()
+                .shouldBe(visible)
+                .shouldHave(text(ELEMENTS_CONFIG.btnDeleteFromCart()))
+                .click();
+        cartPage.getFirstTableRow().title()
+                .shouldNotBe(visible);
+        cartPage.getFirstTableRow().price()
+                .shouldNotBe(visible);
+    }
 }

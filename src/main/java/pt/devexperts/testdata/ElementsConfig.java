@@ -7,4 +7,7 @@ import org.aeonbits.owner.Config;
 public interface ElementsConfig extends Config {
     @Key("btn.addToCart")
     String btnAddToCart();
+
+    @Key("btn.deleteFromCart")
+    String btnDeleteFromCart();
 }
